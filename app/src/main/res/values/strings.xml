@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Shell Game</string>
+    <string name="title_cup">Let\'s play!</string>
+    <string name="title_result">Result</string>
+    <string name="cup1">Open cup one.</string>
+    <string name="cup2">Open cup two.</string>
+    <string name="cup3">Open cup three.</string>
+    <string name="msg_win">You win!</string>
+    <string name='instruction_play'>Tap to open a cup!</string>
+    <string name='button_text_play_game'>Replay</string>
+    <string name="msg_retry">Try again!</string>
+    <string name="msg_button_retry">Try again!</string>
+    <string name="new_game">New Game</string>
+</resources>
