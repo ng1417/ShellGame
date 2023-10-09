@@ -18,14 +18,6 @@ class CupFragment : Fragment() {
     var args = Bundle()
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        // Inflate the layout for this fragment
-        cupView = inflater.inflate(R.layout.fragment_cup, container, false)
-
      override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,8 +44,6 @@ class CupFragment : Fragment() {
         return cupView
     }
 
-        return cupView
-    }
 
 
     private fun onImageButtonClick(view:View) {
