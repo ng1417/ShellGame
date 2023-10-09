@@ -1,7 +1,6 @@
 package com.cs211d.shellgame
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,8 +13,10 @@ import java.util.concurrent.TimeUnit
 
 class CupFragment : Fragment() {
 
-    private lateinit var gameView: View
-    var winStatus = false
+    private lateinit var cupView: View
+    var buttonClicked = 1
+    var args = Bundle()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,36 +24,40 @@ class CupFragment : Fragment() {
     ): View? {
 
         // Inflate the layout for this fragment
-        gameView = inflater.inflate(R.layout.fragment_cup, container, false)
+        cupView = inflater.inflate(R.layout.fragment_cup, container, false)
 
         // Set listener on radioButton Changes
-        val radioButton = gameView.findViewById<RadioGroup>(R.id.button_group)
-        radioButton.setOnCheckedChangeListener(this::onRadioButtonClick)
+        val imageButton1 = cupView.findViewById<ImageButton>(R.id.button1_cup)
+        val imageButton2 = cupView.findViewById<ImageButton>(R.id.button2_cup)
+        val imageButton3 = cupView.findViewById<ImageButton>(R.id.button3_cup)
 
-        return gameView
+        imageButton1.setOnClickListener(this::onImageButtonClick)
+        imageButton2.setOnClickListener(this::onImageButtonClick)
+        imageButton3.setOnClickListener(this::onImageButtonClick)
+
+        return cupView
     }
 
 
-    private fun onRadioButtonClick(radioGroup:RadioGroup, checkedId:Int) {
+    private fun onImageButtonClick(view:View) {
 
-        // decide whether this cup contains a ball
-        val randomNumberGenerator = Random()
-        winStatus = (randomNumberGenerator.nextInt(3) == 0)
-
-        val radioButton = gameView.findViewById<RadioButton>(checkedId)
-
-        if (winStatus) {
-            radioButton.setBackgroundResource(R.drawable.winning_cup)
-        } else {
-            radioButton.rotation = 90F
+        // determined the button clicked
+        buttonClicked = when(view.id) {
+            R.id.button1_cup -> 1
+            R.id.button2_cup -> 2
+            R.id.button3_cup -> 3
+            else -> buttonClicked
         }
+        args.putInt(ARG_BUTTON_CLIcKED, buttonClicked)
 
-        // wait 2 seconds before displaying the result
-        //TimeUnit.SECONDS.sleep(2L)
-
-        val args = Bundle()
+        // determined whether the player win
+        val randomGenerator = Random()
+        val winStatus = (randomGenerator.nextInt(3) == 0)
         args.putBoolean(ARG_WIN_STATUS, winStatus)
-        Navigation.findNavController(gameView).navigate(R.id.cup_to_result, args)
+
+        // navigate to the result page
+        Navigation.findNavController(cupView).navigate(R.id.navigation_result, args)
+
 
     }
 

@@ -20,14 +20,14 @@
         android:name="com.cs211d.shellgame.ResultFragment"
         android:label="@string/title_result"
         tools:layout="@layout/fragment_result" >
-        <action
-            android:id="@+id/result_to_cup"
-            app:destination="@id/navigation_cup" />
         <argument
-            android:name="winStatus"
+            android:name="buttonClicked"
+            android:defaultValue="1"
+            app:argType='integer'/>
+        <argument
+            android:name="isWin"
             android:defaultValue="false"
-            app:argType="boolean" />
-
+            app:argType='boolean' />
     </fragment>
 
 </navigation>

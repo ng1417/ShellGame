@@ -2,15 +2,16 @@ package com.cs211d.shellgame
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 
+const val WINNING_CUP_ID = "winnerCup"
+
 class MainActivity : AppCompatActivity() {
 
-    private var winStatus:Boolean = false
+    private var winnerCup:Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +34,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        winStatus = savedInstanceState.getBoolean(ARG_WIN_STATUS)
+        winnerCup = savedInstanceState.getInt(WINNING_CUP_ID)
     }
 }

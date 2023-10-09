@@ -5,10 +5,7 @@
     <string name="cup1">Open cup one.</string>
     <string name="cup2">Open cup two.</string>
     <string name="cup3">Open cup three.</string>
-    <string name="msg_win">You win!</string>
-    <string name='instruction_play'>Tap to open a cup!</string>
-    <string name='button_text_play_game'>Replay</string>
-    <string name="msg_retry">Try again!</string>
-    <string name="msg_button_retry">Try again!</string>
-    <string name="new_game">New Game</string>
+    <string name='msg_cup'>Tap to open a cup!</string>
+    <string name="msg_result_win">You win!</string>
+    <string name="msg_result_loss">Go back and try again!</string>
 </resources>
