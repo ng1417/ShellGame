@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Shell Game</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cups_header">Cups</string>
+    <string name="results_header">Results</string>
+    <string name="welcome_1">Welcome!</string>
+    <string name="welcome_2">Choose a Cup!</string>
+    <string name="result_1_winner">Winner!</string>
+    <string name="result_2_winner">:)</string>
+    <string name="result_1_loser">Sorry, try again!</string>
+    <string name="result_2_loser">:(</string>
+    <string name="description_wins_count">wins count</string>
+    <string name="win_count_message">%1$d wins so far.</string>
+
+</resources>

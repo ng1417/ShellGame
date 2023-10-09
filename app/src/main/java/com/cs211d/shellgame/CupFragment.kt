@@ -26,7 +26,15 @@ class CupFragment : Fragment() {
         // Inflate the layout for this fragment
         cupView = inflater.inflate(R.layout.fragment_cup, container, false)
 
-        // Set listener on radioButton Changes
+     override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
+        // Inflate the layout for this fragment
+        cupView = inflater.inflate(R.layout.fragment_cup, container, false)
+
+    /* making the code commented out into a list and a loop
         val imageButton1 = cupView.findViewById<ImageButton>(R.id.button1_cup)
         val imageButton2 = cupView.findViewById<ImageButton>(R.id.button2_cup)
         val imageButton3 = cupView.findViewById<ImageButton>(R.id.button3_cup)
@@ -34,6 +42,15 @@ class CupFragment : Fragment() {
         imageButton1.setOnClickListener(this::onImageButtonClick)
         imageButton2.setOnClickListener(this::onImageButtonClick)
         imageButton3.setOnClickListener(this::onImageButtonClick)
+    */
+        val buttonIds = listOf(R.id.button1_cup, R.id.button2_cup, R.id.button3_cup)
+
+        buttonIds.forEach { buttonId ->
+            val imageButton = cupView.findViewById<ImageButton>(buttonId)
+            imageButton.setOnClickListener(this::onImageButtonClick)
+        }
+        return cupView
+    }
 
         return cupView
     }
