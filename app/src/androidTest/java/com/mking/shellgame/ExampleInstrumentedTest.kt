@@ -1,4 +1,4 @@
-package com.cs211d.shellgame
+package com.mking.shellgame
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.cs211d.shellgame", appContext.packageName)
+        assertEquals("com.mking.shellgame", appContext.packageName)
     }
 }

@@ -5,23 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ResultFragment">
+    tools:context=".CupsFragment">
 
     <TextView
-        android:id="@+id/result_text_0"
+        android:id="@+id/welcome_text_0"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:text="@string/welcome_1"
         android:textAlignment="center"
         android:textSize="40sp" />
+
     <TextView
-        android:id="@+id/result_text_1"
+        android:id="@+id/welcome_text_1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:text="@string/welcome_2"
         android:textAlignment="center"
         android:textSize="40sp" />
 
     <ImageButton
-        android:id="@+id/result_cup_button_0"
+        android:id="@+id/cup_button_0"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:layout_gravity="center"
@@ -32,7 +35,7 @@
         android:src="@drawable/cup" />
 
     <ImageButton
-        android:id="@+id/result_cup_button_1"
+        android:id="@+id/cup_button_1"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:layout_gravity="center"
@@ -43,7 +46,7 @@
         android:src="@drawable/cup" />
 
     <ImageButton
-        android:id="@+id/result_cup_button_2"
+        android:id="@+id/cup_button_2"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:layout_gravity="center"

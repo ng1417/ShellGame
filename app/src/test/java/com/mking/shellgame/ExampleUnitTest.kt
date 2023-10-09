@@ -1,4 +1,4 @@
-package com.cs211d.shellgame
+package com.mking.shellgame
 
 import org.junit.Test
 
