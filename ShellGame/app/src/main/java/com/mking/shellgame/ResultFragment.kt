@@ -24,12 +24,7 @@ class ResultFragment : Fragment() {
         val cupSelected = arguments?.getInt("cupSelected")!!
 
         val textViewIds = listOf(R.id.result_text_0, R.id.result_text_1, R.id.result_text_2)
-        val resultTextViews = mutableListOf<TextView>()
-
-        for (textViewId in textViewIds) {
-            val resultTextView = rootView.findViewById<TextView>(textViewId)
-            resultTextViews.add(resultTextView)
-        }
+        val resultTextViews = textViewIds.map { rootView.findViewById<TextView>(it) }
 
         val cupImages: List<ImageButton> = listOf(
             rootView.findViewById(R.id.result_cup_button_0),
