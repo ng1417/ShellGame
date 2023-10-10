@@ -23,31 +23,36 @@ class ResultFragment : Fragment() {
         val winningID = arguments?.getInt("winningID")!!
         val cupSelected = arguments?.getInt("cupSelected")!!
 
-        val resultTextView0 = rootView.findViewById<TextView>(R.id.result_text_0)
-        val resultTextView1 = rootView.findViewById<TextView>(R.id.result_text_1)
-        val resultTextView2 = rootView.findViewById<TextView>(R.id.result_text_2)
-        var cup0View = rootView.findViewById<ImageButton>(R.id.result_cup_button_0)
-        var cup1View = rootView.findViewById<ImageButton>(R.id.result_cup_button_1)
-        var cup2View = rootView.findViewById<ImageButton>(R.id.result_cup_button_2)
+        val textViewIds = listOf(R.id.result_text_0, R.id.result_text_1, R.id.result_text_2)
+        val resultTextViews = mutableListOf<TextView>()
 
+        for (textViewId in textViewIds) {
+            val resultTextView = rootView.findViewById<TextView>(textViewId)
+            resultTextViews.add(resultTextView)
+        }
 
-        val cupViews: List<ImageButton> = listOf(cup0View, cup1View, cup2View)
-
+        val cupImages: List<ImageButton> = listOf(
+            rootView.findViewById(R.id.result_cup_button_0),
+            rootView.findViewById(R.id.result_cup_button_1),
+            rootView.findViewById(R.id.result_cup_button_2)
+        )
         val winningCupDrawable: Drawable? = ContextCompat.getDrawable(requireContext(), R.drawable.winning_cup)
 
         if (winningID == cupSelected) {
             winCount++
-            resultTextView0.text = getString(R.string.result_1_winner)
-            resultTextView1.text = getString(R.string.result_2_winner)
+            resultTextViews[0].text = getString(R.string.result_1_winner)
+            resultTextViews[1].text = getString(R.string.result_2_winner)
         } else {
-            resultTextView0.text = getString(R.string.result_1_loser)
-            resultTextView1.text = getString(R.string.result_2_loser)
+            resultTextViews[0].text = getString(R.string.result_1_loser)
+            resultTextViews[1].text = getString(R.string.result_2_loser)
         }
+
+        //print numbers of wins
         val countMessage = getString(R.string.win_count_message, winCount)
-        resultTextView2.text = countMessage
-       // resultTextView2.text = "You've won $winCount times so far."
-        val matchingCupView = cupViews[winningID]
-        matchingCupView.setImageDrawable(winningCupDrawable)
+        resultTextViews[2].text = countMessage
+
+        val matchingCup = cupImages[winningID]
+        matchingCup.setImageDrawable(winningCupDrawable)
         return rootView
     }
 
